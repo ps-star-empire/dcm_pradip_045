@@ -15,8 +15,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-     
+      env:
+        USER: ${{ secrets.USER }}
+        PASS: ${{ secrets.PASS }}
       run: |
-        docker build . --file Dockerfile --tag spradip/dcm_webserver
+        echo $USER
+        echo $PASS
+        docker build . --file Dockerfile --tag ps-star-empire/dcm_webserver:latest
+        docker login -u $USER -p $PASS
 
-        docker push spradip/dcm_webserver
+        docker push ps-star-empire/dcm_webserver:latest
