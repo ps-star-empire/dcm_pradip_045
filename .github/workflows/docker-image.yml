@@ -21,7 +21,7 @@ jobs:
       run: |
         echo $USER
         echo $PASS
-        docker build . --file Dockerfile --tag ps-star-empire/dcm_webserver:latest
-        docker login -u $USER -p $PASS
+        docker build . --file Dockerfile --tag spradip/dcm_webserver:latest
+        docker login -u $USER -p $PASS docker.io
 
-        docker push ps-star-empire/dcm_webserver:latest
+        docker push spradip/dcm_webserver:latest
