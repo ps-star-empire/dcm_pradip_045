@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-RUN apt-get -y  install nginx
+RUN apt-get install nginx
 
 ADD index.html /var/www/html/
 
